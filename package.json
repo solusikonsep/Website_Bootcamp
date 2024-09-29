@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@snipkode/server": "^0.0.85"
+  }
+}
