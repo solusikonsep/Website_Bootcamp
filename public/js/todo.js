@@ -16,7 +16,7 @@ function template(judul, status, index) {
 function tampilkanTodo() {
     const dataContainer = document.getElementById("data");
     dataContainer.innerHTML = ''; // Kosongkan isi sebelumnya
-    todo.forEach((value, index) => {
+    todo.map((value, index) => {
         dataContainer.innerHTML += template(value.judul, value.status, index);
     });
 }
