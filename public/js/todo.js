@@ -1,12 +1,10 @@
 const todo = [
-    { judul: "Membuat Website", status: "design", tanggal: "2024-09-12"}
+    { judul: "Membuat Website", status: "design", tanggal: "2024-09-12" }
 ];
 
-
-
-function template(judul, status, index){
+function template(judul, status, index) {
     const elementHTML = `
-         <li>
+        <li>
             ${judul} | ${status} | @{NOW.format("YYYY-MM-dd")} | 
             <button onclick="hapus(${index})">Hapus</button>
             <button onclick="ubah(${index})">Ubah</button>
@@ -15,28 +13,44 @@ function template(judul, status, index){
     return elementHTML;
 }
 
+function tampilkanTodo() {
+    const dataContainer = document.getElementById("data");
+    dataContainer.innerHTML = ''; // Kosongkan isi sebelumnya
+    todo.forEach((value, index) => {
+        dataContainer.innerHTML += template(value.judul, value.status, index);
+    });
+}
 
-function tambah(){
-
+function tambah() {
     const judul = prompt("Masukan judul todo");
     const status = prompt("Masukan status todo");
 
-    // console.log(judul, status)
-    const databaru = { judul: judul, status: status };
-    todo.push(databaru); // Selesai Nambahin
+    if (judul && status) { // Pastikan input tidak kosong
+        const databaru = { judul: judul, status: status, tanggal: new Date().toISOString().split('T')[0] }; // Tambah tanggal
+        todo.push(databaru); // Selesai Nambahin
 
-    // Update HTML
-    todo.map((value, index) => {
-        console.log(value, "Ini index", index);
-        document.getElementById("data").innerHTML += template(value.judul, value.status, index);
-    })
-
+        // Update HTML
+        tampilkanTodo();
+    }
 }
 
 function ubah(index) {
-    alert(`Fungsi Ubah | Ini adalah data dengan index ke ${index}`);
-};
+    const judulBaru = prompt("Masukkan judul baru", todo[index].judul);
+    const statusBaru = prompt("Masukkan status baru", todo[index].status);
 
-function hapus(index){
-    alert(`Fungsi Hapus | Ini adalah data dengan index ke ${index}`);
-};
+    if (judulBaru !== null && statusBaru !== null) {
+        todo[index].judul = judulBaru || todo[index].judul; // Tetap gunakan yang lama jika input kosong
+        todo[index].status = statusBaru || todo[index].status; // Tetap gunakan yang lama jika input kosong
+        tampilkanTodo(); // Update tampilan
+    }
+}
+
+function hapus(index) {
+    if (confirm(`Apakah Anda yakin ingin menghapus todo "${todo[index].judul}"?`)) {
+        todo.splice(index, 1); // Hapus elemen
+        tampilkanTodo(); // Update tampilan
+    }
+}
+
+// Tampilkan todo awal saat halaman dimuat
+tampilkanTodo();
