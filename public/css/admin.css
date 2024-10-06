@@ -1,0 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "sidebar header"
+        "sidebar main"
+    ;
+}
+
+.header {
+   grid-area: header; 
+   background-color: aqua;
+   padding: 10px;
+   height: 60px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: antiquewhite;
+    height: 100vh;
+}
+
+.main {
+    grid-area: main;
+    background-color: azure;
+    padding: 10px;
+}
+
