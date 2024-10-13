@@ -14,20 +14,52 @@ body {
 
 .header {
    grid-area: header; 
-   background-color: aqua;
+   background-color: #FFFFFF;
    padding: 10px;
    height: 60px;
 }
 
 .sidebar {
     grid-area: sidebar;
-    background-color: antiquewhite;
+    background-color: #060036;
     height: 100vh;
 }
 
 .main {
     grid-area: main;
-    background-color: azure;
-    padding: 10px;
+    padding: 3rem;
+    background-color: #F7F7F7;
+    height: 90vh;
 }
 
+.grid-col-12 {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    border-radius: 15px;
+    height: 150px;
+    background-color: blue;
+    padding: 16px;
+}
+
+.icon-white {
+    color: white;
+    font-size: 32px !important;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    color: white
+}
+
+.title-card {
+    color: white;
+    font-size: 1.5rem;
+    margin: 0;
+}
