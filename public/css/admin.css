@@ -42,8 +42,9 @@ body {
     border-radius: 15px;
     height: 200px;
     background-color: blue;
-    /* padding: 16px; */
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .icon-white {
@@ -62,17 +63,16 @@ body {
 
 .title-card {
     color: white;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     margin: 0;
     padding-left: 16px;
 }
 
 .btn-act-card {
     color: white;
-    position: absolute;
+    /* position: absolute; */
     bottom: 0;
     padding: 10px;
-    width: 96%;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     text-align: right;
