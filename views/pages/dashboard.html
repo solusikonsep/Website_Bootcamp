@@ -1,44 +1,13 @@
 @{layout("layouts/admin")}
 
 <div class="header"></div>
-<div class="sidebar"></div>
+<div class="sidebar">
+    @{view("components/sidebar")}
+</div>
 <div class="main">
     <div class="grid-col-12">
-        <div class="card">
-            <div class="flex">
-                <i class="material-symbols-outlined icon-white">
-                    library_books
-                </i>
-                <h2>Semua Buku</h2>
-            </div>
-            <h3 class="title-card">12</h3>
-        </div>
-        <div class="card">
-            <div class="flex">
-                <i class="material-symbols-outlined icon-white">
-                    library_books
-                </i>
-                <h2>Semua Penerbit</h2>
-            </div>
-            <h3 class="title-card">12</h3>
-        </div>
-        <div class="card">
-            <div class="flex">
-                <i class="material-symbols-outlined icon-white">
-                    library_books
-                </i>
-                <h2>Semua Pengguna</h2>
-            </div>
-            <h3 class="title-card">12</h3>
-        </div>
-        <div class="card">
-            <div class="flex">
-                <i class="material-symbols-outlined icon-white">
-                    library_books
-                </i>
-                <h2>Semua Buku</h2>
-            </div>
-            <h3 class="title-card">12</h3>
-        </div>
+        @{view("components/card", { class: 'background-linear', btnClass: 'btn-primary', title: 'Semua Buku', total: 12, path: '/buku' })}
+        @{view("components/card", { class: 'background-linear-navy', btnClass: "btn-secondary", title: 'Semua Penerbit', total: 30, path: '/penerbit' })}
+        @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Semua Pengguna', total: 112, path: '/pengguna' })}
     </div>
 </div>
