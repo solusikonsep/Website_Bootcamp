@@ -15,7 +15,9 @@ function template(judul, status, index) {
 
 function tampilkanTodo() {
     const dataContainer = document.getElementById("data");
+
     dataContainer.innerHTML = ''; 
+
     todo.map((value, index) => {
         dataContainer.innerHTML += template(value.judul, value.status, index);
     });
@@ -25,7 +27,7 @@ function tambah() {
     const judul = prompt("Masukan judul todo");
     const status = prompt("Masukan status todo");
 
-    if (judul && status) {
+    if (judul && status) { // Pastikan input tidak kosong
         const databaru = { judul: judul, status: status, tanggal: new Date().toISOString().split('T')[0] }; // Tambah tanggal
         todo.push(databaru); // Selesai Nambahin
 
@@ -53,6 +55,7 @@ function hapus(index) {
      * Program Komputer \
      * 0 1
      */
+
 
     if (confirm(`Apakah Anda yakin ingin menghapus todo "${todo[index].judul}"?`)) {
         todo.splice(index, 1); // Hapus elemen
