@@ -32,20 +32,67 @@ body {
     /* height: 90vh; */
 }
 
-.grid-col-12 {
+.grid {
     display: grid;
     gap: 3rem;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+        "col1 col2 col3"
+        "col4 col4 col5"
+        "col4 col4 col6"
+        "col7 col8 col9"
+    ;
 }
 
 .card {
     border-radius: 15px;
-    height: 200px;
+    /* height: 200px; */
     background-color: blue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
+.card:nth-child(1){
+    grid-area: col1;
+}
+
+.card:nth-child(2){
+    grid-area: col2;
+}
+.card:nth-child(3){
+    grid-area: col3;
+}
+
+.card:nth-child(4){
+    grid-area: col4;
+}
+
+
+.card:nth-child(5){
+    grid-area: col5;
+}
+
+
+.card:nth-child(6){
+    grid-area: col6;
+}
+
+
+.card:nth-child(7){
+    grid-area: col7;
+}
+
+.card:nth-child(8){
+    grid-area: col8;
+}
+
+
+.card:nth-child(9){
+    grid-area: col9;
+}
+
+
 
 .icon-white {
     color: white;
@@ -136,3 +183,12 @@ ul > li > a {
 ul.navigation > li {
     padding: 16px;
 }
+
+/* .grid-row-12 {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.grid-col-4 {
+    grid-column: span 4;
+} */
