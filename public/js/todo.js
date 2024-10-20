@@ -1,5 +1,5 @@
 const todo = [
-    { judul: "Membuat Website", status: "design", tanggal: "2024-09-12" }
+    { judul: "Task1", status: "done"}
 ];
 
 function template(judul, status, index) {
@@ -15,7 +15,9 @@ function template(judul, status, index) {
 
 function tampilkanTodo() {
     const dataContainer = document.getElementById("data");
-    dataContainer.innerHTML = ''; // Kosongkan isi sebelumnya
+
+    dataContainer.innerHTML = ''; 
+
     todo.map((value, index) => {
         dataContainer.innerHTML += template(value.judul, value.status, index);
     });
@@ -46,6 +48,15 @@ function ubah(index) {
 }
 
 function hapus(index) {
+
+    console.log(index);
+
+    /**
+     * Program Komputer \
+     * 0 1
+     */
+
+
     if (confirm(`Apakah Anda yakin ingin menghapus todo "${todo[index].judul}"?`)) {
         todo.splice(index, 1); // Hapus elemen
         tampilkanTodo(); // Update tampilan

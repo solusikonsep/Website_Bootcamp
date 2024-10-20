@@ -1,3 +1,4 @@
 node_modules
-tmp
 index.js.json
+tmp
+index.js.overload

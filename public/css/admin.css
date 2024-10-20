@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Goudy+Bookletter+1911&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+    margin: 0;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 60px 1fr;
+    grid-template-areas: 
+        "sidebar header" /* row pertama*/
+        "sidebar main" /* row kedua*/
+    ;
+}
+
+.header {
+   grid-area: header; 
+   background-color: #FFFFFF;
+   padding: 10px;
+   height: 60px;
+}
+
+.sidebar {
+    grid-area: sidebar;
+    background-color: #060036;
+    height: 100vh;
+}
+
+.main {
+    grid-area: main;
+    padding: 3rem;
+    background-color: #F7F7F7;
+    /* height: 90vh; */
+}
+
+.grid-col-12 {
+    display: grid;
+    gap: 3rem;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    border-radius: 15px;
+    height: 200px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.icon-white {
+    color: white;
+    font-size: 32px !important;
+}
+
+.flex {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    color: white;
+    padding-left: 16px;
+}
+
+.title-card {
+    color: white;
+    font-size: 2.5rem;
+    margin: 0;
+    padding-left: 16px;
+}
+
+.btn-act-card {
+    color: white;
+    /* position: absolute; */
+    bottom: 0;
+    padding: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    text-align: right;
+    cursor: pointer;
+}
+
+.btn-act-card > a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn-primary {
+    background-color: #004833
+}
+
+.btn-secondary {
+    background-color: #090050
+}
+
+.btn-purple {
+    background-color: #390634
+}
+
+.background-linear {
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, rgba(0,128,90,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.background-linear-navy {
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #090050 35%, #0F0083 100%);
+}
+
+.background-linear-purple {
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
+}
+
+.brand-logo {
+    /* padding: 16px; */
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    background: rgb(55,50,90);
+    background: linear-gradient(90deg, rgba(55,50,90,1) 50%, rgba(15,0,126,1) 100%);
+}
+
+ul.navigation {
+    list-style: none;
+    padding-left: 0;
+}
+
+ul > li > a {
+    text-decoration: none;
+}
+
+ul.navigation > li {
+    padding: 16px;
+}
