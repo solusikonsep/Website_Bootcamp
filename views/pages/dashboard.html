@@ -1,15 +1,25 @@
 @{layout("layouts/admin")}
 
-    @{view("components/card", { class: 'background-linear', btnClass: 'btn-primary', title: 'Semua Buku', total: 12, path: '/buku', icon: 'group' })}
-    @{view("components/card", { class: 'background-linear-navy', btnClass: "btn-secondary", title: 'Semua Penerbit', total: 30, path: '/penerbit', icon: 'library_books' })}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Semua Pengguna', total: 112, path: '/pengguna', icon: 'group'})}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Pengguna Online', total: 112, path: '/pengguna', icon: 'group' })}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Pengguna Online', total: 112, path: '/pengguna', icon: 'group' })}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Pengguna Online', total: 112, path: '/pengguna', icon: 'group' })}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Pengguna Online', total: 112, path: '/pengguna', icon: 'group' })}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Pengguna Online', total: 112, path: '/pengguna', icon: 'group' })}
-    @{view("components/card", { class: 'background-linear-purple', btnClass: "btn-purple", title: 'Pengguna Online', total: 112, path: '/pengguna', icon: 'group' })}
-
+    @{view("components/card", { btnClass: 'btn-primary', title: 'Semua Buku', total: 12, path: '/buku', icon: 'group' })}
+    @{view("components/card", { btnClass: "btn-secondary", title: 'Semua Penerbit', total: 30, path: '/penerbit', icon: 'library_books' })}
+    @{view("components/card", { btnClass: "btn-purple", title: 'Semua Pengguna', total: 112, path: '/pengguna', icon: 'group'})}
+    <div class="card">
+        <div class="flex">
+            <i class="material-symbols-outlined icon-white">
+                group
+            </i>
+            <h2>Pengguna Online (150)</h2>
+        </div>
+        <!-- Data Users Online Last Active -->
+        <div class="btn-act-card">
+           <a href="/pengguna?lastActive=@{NOW}">Lihat Detail</a>
+        </div>
+    </div>
+    @{view("components/card", { title: 'Book Transaction', total: 134, path: '/pengguna', icon: 'group' })}
+    @{view("components/card", { title: 'Saldo Platform', total: 200000000, path: '/pengguna', icon: 'group' })}
+    @{view("components/card", { title: 'Top Up', total: 129990, path: '/pengguna', icon: 'group' })}
+    @{view("components/card", { title: 'Penarikan Dana', total: 1000000, path: '/pengguna', icon: 'group' })}
+    @{view("components/card", { title: 'Estimasi Pendapatan', total: 230000000, path: '/pengguna', icon: 'group' })}
 
 
 
