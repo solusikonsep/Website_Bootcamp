@@ -22,7 +22,6 @@ body {
 .sidebar {
     grid-area: sidebar;
     background-color: #060036;
-    height: 100vh;
 }
 
 .main {
@@ -231,3 +230,11 @@ ul.navigation > li:hover {
 .grid-col-4 {
     grid-column: span 4;
 } */
+
+.paper {
+    background-color: white;
+    padding: 1rem;
+    grid-column: 1/4;
+    grid-row: 1/4;
+    height: 100vh;
+}
