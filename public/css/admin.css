@@ -55,41 +55,75 @@ body {
 
 .card:nth-child(1){
     grid-area: col1;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, rgba(0,128,90,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .card:nth-child(2){
     grid-area: col2;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #090050 35%, #0F0083 100%);
 }
 .card:nth-child(3){
     grid-area: col3;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 .card:nth-child(4){
     grid-area: col4;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #252049 35%, #252049 100%);
+}
+
+.card:nth-child(4) > .btn-act-card {
+    background-color: #1b1735;
 }
 
 
+.card:nth-child(4) > .title-card {
+    margin-top: -8rem !important;
+    margin-left: 1rem !important;
+}
+
 .card:nth-child(5){
     grid-area: col5;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #7F6000 35%, #7F6000 100%);
+}
+
+.card:nth-child(5) > .btn-act-card {
+    background-color: #423202;
 }
 
 
 .card:nth-child(6){
     grid-area: col6;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #A80A2A 35%, #3B1011 100%);
 }
 
+.card:nth-child(6) > .btn-act-card {
+    background-color: #22090a;
+}
 
 .card:nth-child(7){
     grid-area: col7;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 .card:nth-child(8){
     grid-area: col8;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 
 .card:nth-child(9){
     grid-area: col9;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 
