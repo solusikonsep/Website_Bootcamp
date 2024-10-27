@@ -208,6 +208,7 @@ body {
 ul.navigation {
     list-style: none;
     padding-left: 0;
+
 }
 
 ul > li > a {
@@ -216,6 +217,10 @@ ul > li > a {
 
 ul.navigation > li {
     padding: 16px;
+}
+
+ul.navigation > li:hover {
+    background-color: #004833;
 }
 
 /* .grid-row-12 {
