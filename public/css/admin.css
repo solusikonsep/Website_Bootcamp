@@ -22,6 +22,8 @@ body {
 .sidebar {
     grid-area: sidebar;
     background-color: #060036;
+    min-height: 100vh;
+    height: auto;
 }
 
 .main {
@@ -233,8 +235,40 @@ ul.navigation > li:hover {
 
 .paper {
     background-color: white;
-    padding: 1rem;
+    padding: 3rem;
     grid-column: 1/4;
     grid-row: 1/4;
     height: 100vh;
+}
+
+.icon-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-page > i {
+    font-size: 2.8rem;
+    color: #234;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-cari {
+    border-color: grey;
+    border-width: 1px;
+    padding: 8px;
+    width: 300px;
+    border-radius: 4px;
 }
