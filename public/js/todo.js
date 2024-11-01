@@ -1,67 +1,61 @@
 const todo = [
-    { judul: "Task1", status: "done"}
+    {task : "Membuat Website", status : "onprogress", date : "2024-09-29"},
 ];
 
-function template(judul, status, index) {
+function getCurrentDate() {
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    return `${year}-${month}-${day}`;
+}
+
+function template(task, status, date, index){
     const elementHTML = `
-        <li>
-            ${judul} | ${status} | @{NOW.format("YYYY-MM-dd")} | 
-            <button onclick="hapus(${index})">Hapus</button>
-            <button onclick="ubah(${index})">Ubah</button>
-        </li>
+    <li>
+        ${task} | ${status} | ${date}
+        <button onclick="deleteTODO(${index})">Hapus</button>
+        <button onclick="editTODO(${index})">Edit</button>
+      </li>
     `;
     return elementHTML;
 }
 
-function tampilkanTodo() {
-    const dataContainer = document.getElementById("data");
-
-    dataContainer.innerHTML = ''; 
-
-    todo.map((value, index) => {
-        dataContainer.innerHTML += template(value.judul, value.status, index);
+function renderTODO() {
+    const todoList = document.getElementById("todo-list");
+    todoList.innerHTML = '';
+    todo.map((data, idx) => {
+        todoList.innerHTML += template(data.task, data.status, data.date, idx);
     });
 }
 
-function tambah() {
-    const judul = prompt("Masukan judul todo");
-    const status = prompt("Masukan status todo");
+function addTODO() {
+    const task = prompt("Tasknya apa?");
+    const status = prompt("Statusnya apa?");
+    const date = getCurrentDate();
 
-    if (judul && status) { // Pastikan input tidak kosong
-        const databaru = { judul: judul, status: status, tanggal: new Date().toISOString().split('T')[0] }; // Tambah tanggal
-        todo.push(databaru); // Selesai Nambahin
+    // Add new task
+    todo.push({task: task, status: status, date: date});
 
-        // Update HTML
-        tampilkanTodo();
-    }
+    // Update Html
+    renderTODO();
+};
+
+function deleteTODO(idx) {
+    // Remove the task at the specified index
+    todo.splice(idx, 1);
+
+    // Re-render the updated list
+    renderTODO();
 }
 
-function ubah(index) {
-    const judulBaru = prompt("Masukkan judul baru", todo[index].judul);
-    const statusBaru = prompt("Masukkan status baru", todo[index].status);
+function editTODO(idx) {
+    const status = prompt("Mau ubah status jadi apa?");
+    todo[idx].status = status;
 
-    if (judulBaru !== null && statusBaru !== null) {
-        todo[index].judul = judulBaru || todo[index].judul; // Tetap gunakan yang lama jika input kosong
-        todo[index].status = statusBaru || todo[index].status; // Tetap gunakan yang lama jika input kosong
-        tampilkanTodo(); // Update tampilan
-    }
+    // Re-render the updated list
+    renderTODO();
 }
 
-function hapus(index) {
-
-    console.log(index);
-
-    /**
-     * Program Komputer \
-     * 0 1
-     */
-
-
-    if (confirm(`Apakah Anda yakin ingin menghapus todo "${todo[index].judul}"?`)) {
-        todo.splice(index, 1); // Hapus elemen
-        tampilkanTodo(); // Update tampilan
-    }
-}
-
-// Tampilkan todo awal saat halaman dimuat
-tampilkanTodo();
+// Initial rendering
+renderTODO();

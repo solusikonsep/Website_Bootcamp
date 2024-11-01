@@ -27,4 +27,4 @@ ROUTE("GET /pengguna", function(){
 
 
 
-HTTP("debug", { port: 5000 });
+HTTP("debug", { port: 8000 });
