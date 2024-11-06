@@ -29,8 +29,20 @@ exports.install = function() {
     });
 
     ROUTE("GET /api/buku/{id}", function(){
-        // console.log("Ini adalah id yang dikirim dari URL client ", this.params.id);
-        this.json(buku[this.params.id]);
+        console.log("Ini adalah id yang dikirim dari URL client ", this.params.id);
+        buku.map((value, key)=> {
+            if(value.id_buku == this.params.id){
+                this.json(value);
+            }
+        })
+        // this.json(buku[this.params.id]);
+    });
+
+    ROUTE("POST /api/buku", function(){
+
+        buku.push(this.body);
+
+        this.json(buku);
     });
 
 
