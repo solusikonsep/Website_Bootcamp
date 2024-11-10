@@ -27,28 +27,27 @@ exports.install = async function () {
 
   ROUTE("GET /api/", async function () {
     // console.log(Buku.find())
+ 
+    this.json("Selamat datang di API Digital Books");
+  });
+
+  ROUTE("GET /api/buku", async function () {
     const {db} =  await connectToMongo();
-    const hasil = await db.collection("books").find().toArray();
+    const hasil = await db.collection("books").find({ tahun_terbit: 2022 }).toArray();
     this.json(hasil);
   });
 
-  ROUTE("GET /api/buku", function () {
-    this.json(buku);
+  ROUTE("GET /api/buku/{id}", async function () {
+    const {db} =  await connectToMongo();
+    const hasil = await db.collection("books").find({ id_buku: this.params.id }).toArray();
+    this.json(hasil);
   });
 
-  ROUTE("GET /api/buku/{id}", function () {
-    console.log("Ini adalah id yang dikirim dari URL client ", this.params.id);
-    buku.map((value, key) => {
-      if (value.id_buku == this.params.id) {
-        this.json(value);
-      }
-    });
-    // this.json(buku[this.params.id]);
-  });
+  ROUTE("POST /api/buku", async function () {
 
-  ROUTE("POST /api/buku", function () {
-    buku.push(this.body);
-
-    this.json(buku);
+    const {db} =  await connectToMongo();
+    const hasil = await db.collection("books").insertOne(this.body).toArray();
+    
+    this.json(hasil);
   });
 };
