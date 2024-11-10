@@ -1,9 +1,11 @@
 {
   "dependencies": {
-    "@snipkode/server": "^0.0.85"
+    "@snipkode/server": "^0.0.85",
+    "mongodb": "^6.10.0",
+    "mongoose": "^8.8.1"
   },
   "scripts": {
-     "start": "nodemon --watch . --ext js index.js"
+    "start": "nodemon --watch . --ext js index.js"
   },
   "devDependencies": {
     "nodemon": "^3.1.7"
