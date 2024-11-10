@@ -1,0 +1,19 @@
+[
+    {
+        "id_buku": 1,
+        "judul": "Buku REST API Serie 1",
+        "pengarang_id": 1,
+        "kategori_id": 2,
+        "tahun_terbit": 2023,
+        "harga": 100000
+      },
+
+      {
+        "id_buku": 2,
+        "judul": "Buku REST API Serie 2",
+        "pengarang_id": 1,
+        "kategori_id": 2,
+        "tahun_terbit": 2023,
+        "harga": 100000
+      }
+]
