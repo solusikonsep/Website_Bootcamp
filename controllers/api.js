@@ -39,7 +39,7 @@ exports.install = async function () {
 
   ROUTE("GET /api/buku/{id}", async function () {
     const {db} =  await connectToMongo();
-    const hasil = await db.collection("books").find({ id_buku: this.params.id }).toArray();
+    const hasil = await db.collection("books").find({ id_buku: parseInt(this.params.id) }).toArray();
     this.json(hasil);
   });
 
@@ -47,7 +47,7 @@ exports.install = async function () {
 
     const {db} =  await connectToMongo();
     const hasil = await db.collection("books").insertOne(this.body).toArray();
-    
+
     this.json(hasil);
   });
 };
