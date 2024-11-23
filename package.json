@@ -1,5 +1,12 @@
 {
   "dependencies": {
     "@snipkode/server": "^0.0.85"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon --ext js --ignore node_modules index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.7"
   }
 }
