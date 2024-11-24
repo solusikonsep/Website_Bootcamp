@@ -22,7 +22,6 @@ body {
 .sidebar {
     grid-area: sidebar;
     background-color: #060036;
-    height: 100vh;
 }
 
 .main {
@@ -55,41 +54,65 @@ body {
 
 .card:nth-child(1){
     grid-area: col1;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, rgba(0,128,90,1) 35%, rgba(0,212,255,1) 100%);
 }
 
 .card:nth-child(2){
     grid-area: col2;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #090050 35%, #0F0083 100%);
 }
 .card:nth-child(3){
     grid-area: col3;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 .card:nth-child(4){
     grid-area: col4;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #252049 35%, #252049 100%);
 }
 
+.card:nth-child(4) > .btn-act-card{
+    background-color: #1b1735;
+}
 
 .card:nth-child(5){
     grid-area: col5;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #7f6007 35%, #7f6007 100%);
 }
 
 
 .card:nth-child(6){
     grid-area: col6;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #a80a2a 35%, #710D67 100%);
 }
 
+.card:nth-child(6) > .btn-act-card{
+    background-color: #1b1735;
+}
 
 .card:nth-child(7){
     grid-area: col7;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 .card:nth-child(8){
     grid-area: col8;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 
 .card:nth-child(9){
     grid-area: col9;
+    background: rgb(2,0,36);
+    background: linear-gradient(176deg, rgba(2,0,36,1) 0%, #41083B 35%, #710D67 100%);
 }
 
 
@@ -184,6 +207,10 @@ ul.navigation > li {
     padding: 16px;
 }
 
+ul.navigation > li:hover{
+    background-color:#004833;
+}
+
 /* .grid-row-12 {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -192,3 +219,43 @@ ul.navigation > li {
 .grid-col-4 {
     grid-column: span 4;
 } */
+
+.paper {
+    background-color: white;
+    padding: 1rem;
+    grid-column: 1/4;
+    grid-row: 1/4;
+    height: 100vh;
+}
+
+.icon-page {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-page > i {
+    font-size: 1.8rem;
+    color:#234;
+}
+
+.section1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-cari {
+    border-color: grey;
+    border-width: 1px;
+    padding: 8px;
+    width: 300px;
+    border-radius: 4px;
+}
